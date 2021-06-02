@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+		<title>Café Frank</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+      body {
+      background-color: rgb(32, 32, 32);
+      height: 900px; 
+      }
+      h1 {
+      color: yellow;
+      font-family: 'Edwardian Script ITC';
+      font-size: 100px;
+      position: absolute;
+      left: 160px;
+      top: 60px;
+      }
+      #create-account {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      letter-spacing: -1px;
+      left: 900px;
+      top: 25px;
+      height: 25px;
+      }
+      #buy {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 900px;
+      top: 60px;
+      height: 25px;
+      }
+      #search {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 900px;
+      top: 95px;
+      height: 25px;
+      }
+      .navbar {
+      background-color: yellow;
+      border-color: yellow;
+      top: 190px;
+      left: -20px;
+      width: 500px;
+      }
+      .dropdown-menu {
+      background-color: yellow;
+      }
+      #itn {
+      color: black;
+      font-family: 'Edwardian Script ITC';
+      font-size: 20px;
+      }
+      #description {
+      background-color: black;
+      color: yellow;
+      position: absolute;
+      line-height: 60px;
+      font-size: 30px;
+      left: 180px;
+      top: 450px;
+      width: 1000px;
+      }
+      </style>
+  </head>
+  <body>
+  <div class="col-xs-12">
+  <div class="container-fluid">
+    <div class="col-xs-12">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+    	    <ul class="nav navbar-nav">
+              <li><a href="index.html" id="itn">Home</a></li>
+    	        <li class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown" id="itn">
+                        Recipes <span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu">
+                  <li><a href="1 recipes.html" >Breakfast</a></li>
+                  <li><a href="2 recipes.html">Lunch/ dinner</a></li>
+                  <li><a href="3 recipes.html">Savory snacks</a></li>
+                  <li><a href="4 recipes.html">Desserts/ sweets</a></li>
+                </ul>
+                  <li><a href="about us.html" id="itn">About us</a></li>
+                  <li><a href="products.html" id="itn">Products</a></li>
+                  <li><a href="rules.html" id="itn">Rules</a></li>
+            </ul>
+    	    </div>
+          </div>
+    <span id="search"><a href="#" class="glyphicon glyphicon-search"></a></span>
+    </div>
+    <div>
+    <span id="create-account"><a href="#" class="glyphicon glyphicon-user"></a></span>
+    </div>
+    <div>
+        <a href="#">
+        <img id="buy" src="https://webstockreview.net/images/dollar-clipart-dollor-14.png"></a>
+      </div>
+      <span id="description">We’re a restaurant, but YOU have to make the food, 	not us.  We have simple recipes with simple ingredients.  We have over 
+	100 different recipes to choose from so feel free to be inspired by 
+	us.  Yes, we do have products that you can buy from us, but 
+	they’re fake food because we can’t make food for you.  You’re 
+	getting older now and need to learn how to cook.  Btw, we NEVER use the number 20 nor ANY number that ends with 20, because 20 is an unlucky number!</span>
+	</div>
+  </div>
+      <script src="script.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
+  </body>
+</html>

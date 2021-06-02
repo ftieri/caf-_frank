@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+		<title>Café Frank</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+    body {
+      background-color: rgb(32, 32, 32);
+      height: 1400px;
+      width: 1000px;
+      }
+      h1 {
+      color: yellow;
+      font-family: 'Edwardian Script ITC';
+      font-size: 100px;
+      position: absolute;
+      left: 160px;
+      top: 60px;
+      }
+      #create-account {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      letter-spacing: -1px;
+      left: 870px;
+      top: 25px;
+      height: 25px;
+      }
+      #buy {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 870px;
+      top: 60px;
+      height: 25px;
+      }
+      #search {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 870px;
+      top: 95px;
+      height: 25px;
+      }
+      .navbar {
+      background-color: yellow;
+      border-color: yellow;
+      top: 190px;
+      left: -35px;
+      width: 500px;
+      }
+      .menu {
+      position: absolute;
+      top: 190px;
+      }
+      .dropdown-menu {
+      background-color: yellow;
+      }
+      #itn {
+      color: black;
+      font-family: 'Edwardian Script ITC';
+      font-size: 20px;
+      }
+      #rectangle-six {
+      height: 50px;
+      width: 80px;
+      background-color: yellow;
+      position: absolute;
+      left: 460px;
+      top: 460px;
+      }
+      #view-recipe-one {
+      color: black;
+      text-decoration: none;
+      font-family: 'Edwardian Script ITC';
+      font-size: 25px;
+      position: absolute;
+      line-height: 20px;
+      left: 465px;
+      top: 465px;
+      }
+      #takis {
+      position: absolute;
+      left: 120px;
+      top: 330px;
+      }
+      #mnt {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 30px;
+      position: absolute;
+      left: 140px;
+      top: 260px;
+      }
+      #mntd {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 25px;
+      position: absolute;
+      left: 460px;
+      top: 350px;
+      width: 300px;
+      }
+      #star-one {
+      color: yellow;
+      position: absolute;
+      left: 450px;
+      top: 260px;
+      }
+      #star-two {
+      color: yellow;
+      position: absolute;
+      left: 530px;
+      top: 260px;
+      }
+      #star-three {
+      color: yellow;
+      position: absolute;
+      left: 610px;
+      top: 260px;
+      }
+      #star-four {
+      color: red;
+      position: absolute;
+      left: 690px;
+      top: 260px;
+      }
+      #star-five {
+      color: red;
+      position: absolute;
+      left: 770px;
+      top: 260px;
+      }
+      #rectangle-seven {
+      height: 50px;
+      width: 80px;
+      background-color: yellow;
+      position: absolute;
+      left: 460px;
+      top: 760px;
+      }
+      #view-recipe-two {
+      color: black;
+      text-decoration: none;
+      font-family: 'Edwardian Script ITC';
+      font-size: 25px;
+      position: absolute;
+      line-height: 20px;
+      left: 465px;
+      top: 765px;
+      }
+      #tomato-chips {
+      position: absolute;
+      left: 120px;
+      top: 630px;
+      }
+      #ltc {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 30px;
+      position: absolute;
+      left: 140px;
+      top: 560px;
+      }
+      #ltcd {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 25px;
+      position: absolute;
+      left: 460px;
+      top: 650px;
+      width: 300px;
+      }
+	    #star-six {
+      color: yellow;
+      position: absolute;
+      left: 450px;
+      top: 560px;
+      }
+      #star-seven {
+      color: yellow;
+      position: absolute;
+      left: 530px;
+      top: 560px;
+      }
+      #star-eight {
+      color: red;
+      position: absolute;
+      left: 610px;
+      top: 560px;
+      }
+      #star-nine {
+      color: red;
+      position: absolute;
+      left: 690px;
+      top: 560px;
+      }
+      #star-ten {
+      color: red;
+      position: absolute;
+      left: 770px;
+      top: 560px;
+      }
+      #rectangle-eight {
+      height: 50px;
+      width: 80px;
+      background-color: yellow;
+      position: absolute;
+      left: 460px;
+      top: 1060px;
+      }
+      #view-recipe-three {
+      color: black;
+      text-decoration: none;
+      font-family: 'Edwardian Script ITC';
+      font-size: 25px;
+      position: absolute;
+      line-height: 20px;
+      left: 465px;
+      top: 1065px;
+      }
+      #frog-sandwich {
+      position: absolute;
+      left: 120px;
+      top: 930px;
+      }
+      #tpatf {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 30px;
+      position: absolute;
+      left: 140px;
+      top: 860px;
+      }
+      #tpatfd {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 25px;
+      position: absolute;
+      left: 460px;
+      top: 950px;
+      width: 300px;
+      }
+      #star-eleven {
+      color: yellow;
+      position: absolute;
+      left: 450px;
+      top: 860px;
+      }
+      #star-twelve {
+      color: yellow;
+      position: absolute;
+      left: 530px;
+      top: 860px;
+      }
+      #star-thirteen {
+      color: yellow;
+      position: absolute;
+      left: 610px;
+      top: 860px;
+      }
+      #star-fourteen {
+      color: yellow;
+      position: absolute;
+      left: 690px;
+      top: 860px;
+      }
+      #star-fifteen {
+      color: yellow;
+      position: absolute;
+      left: 770px;
+      top: 860px;
+      }
+    </style>
+</head>
+<body>
+  <div class="col-xs-12">
+  <div class="container-fluid">
+	  <div class="col-xs-12">
+    <div class="container-fluid">
+    <span id="search"><a href="#" class="glyphicon glyphicon-search"></a></span>
+    </div>
+    <div>
+        <a href="#">
+        <img id="buy" src="https://webstockreview.net/images/dollar-clipart-dollor-14.png"></a>
+      </div>
+    <div class="col-xs-12 menu">
+    <a href="view recipe.html" id="rectangle-six"><a href="view recipe.html" id="view-recipe-one">View<br> Recipe</a>
+    <div>
+      <span id="takis">
+      <img src="https://th.bing.com/th/id/R98ba3c8fdec434271d3e93fa9ddf49f6?rik=G%2bLQQuC%2foUETyg&pid=ImgRaw" width="300" height="250"></span>
+      <h2 id="mnt">Mac n' Takis</h2>
+      <h2 id="mntd">Boiled Takis that you eat with a fork or a spoon.</h2>
+      </div>
+      <div><span id="star-one" style='font-size:80px;'>&#9733</span>
+      <span id="star-two" style='font-size:80px;'>&#9733</span>
+      <span id="star-three" style='font-size:80px;'>&#9733</span>
+      <span id="star-four" style='font-size:80px;'>&#9733</span>
+      <span id="star-five" style='font-size:80px;'>&#9733</span>
+      </div>
+      <a href="view recipe.html" id="rectangle-seven"><a href="view recipe.html" id="view-recipe-two">View<br> Recipe</a>
+      <span id="tomato-chips">
+      <img src="https://th.bing.com/th/id/Re9f34693d0dec0ef9216ca62f16b0796?rik=sLMhQhKECiiUAA&pid=ImgRaw" width="300" height="250"></span>
+      <h2 id="ltc">Lay's tomato chips</h2>
+      <h2 id="ltcd">Chips made out of tomatoes instead of potatoes.</h2>
+      <div><span id="star-six" style='font-size:80px;'>&#9733</span>
+      <span id="star-seven" style='font-size:80px;'>&#9733</span>
+      <span id="star-eight" style='font-size:80px;'>&#9733</span>
+      <span id="star-nine" style='font-size:80px;'>&#9733</span>
+      <span id="star-ten" style='font-size:80px;'>&#9733</span>
+      </div>
+      <a href="view recipe.html" id="rectangle-eight"><a href="view recipe.html" id="view-recipe-three">View<br> Recipe</a>
+      <span id="frog-sandwich">
+      <img src="https://th.bing.com/th/id/OIP.Sk18KNIsafPjA2TRNkamXAHaG4?pid=ImgDet&rs=1" width="300" height="250"></span>
+      <h2 id="tpatf">The pretzel and the frog</h2>
+      <h2 id="tpatfd">A frog sandwich with a pretzel bun.  (It's fried frog)</h2>
+	  <div><span id="star-eleven" style='font-size:80px;'>&#9733</span>
+      <span id="star-twelve" style='font-size:80px;'>&#9733</span>
+      <span id="star-thirteen" style='font-size:80px;'>&#9733</span>
+      <span id="star-fourteen" style='font-size:80px;'>&#9733</span>
+      <span id="star-fifteen" style='font-size:80px;'>&#9733</span>
+      </div>
+      </div>
+      <div class="col-xs-12">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+    	    <ul class="nav navbar-nav">
+              <li><a href="index.html" id="itn">Home</a></li>
+    	        <li class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown" id="itn">
+                        Recipes <span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu">
+                  <li><a href="1 recipes.html" >Breakfast</a></li>
+                  <li><a href="2 recipes.html">Lunch/ dinner</a></li>
+                  <li><a href="3 recipes.html">Savory snacks</a></li>
+                  <li><a href="4 recipes.html">Desserts/ sweets</a></li>
+                </ul>
+                  <li><a href="about us.html" id="itn">About us</a></li>
+                  <li><a href="products.html" id="itn">Products</a></li>
+                  <li><a href="rules.html" id="itn">Rules</a></li>
+            </ul>
+    	    </div>
+          </div>
+          <div>
+    <span id="create-account"><a href="#" class="glyphicon glyphicon-user"></a></span>
+        </div>
+        </div>
+        <script src="script.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>  
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+		<title>Café Frank</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+    body {
+      background-color: rgb(32, 32, 32);
+      height: 1400px;
+      width: 1000px;
+      }
+      h1 {
+      color: yellow;
+      font-family: 'Edwardian Script ITC';
+      font-size: 100px;
+      position: absolute;
+      left: 160px;
+      top: 60px;
+      }
+      #create-account {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      letter-spacing: -1px;
+      left: 870px;
+      top: 25px;
+      height: 25px;
+      }
+      #buy {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 870px;
+      top: 60px;
+      height: 25px;
+      }
+      #search {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 870px;
+      top: 95px;
+      height: 25px;
+      }
+      .navbar {
+      background-color: yellow;
+      border-color: yellow;
+      top: 190px;
+      left: -35px;
+      width: 500px;
+      }
+      .menu {
+      position: absolute;
+      top: 190px;
+      }
+      .dropdown-menu {
+      background-color: yellow;
+      }
+      #itn {
+      color: black;
+      font-family: 'Edwardian Script ITC';
+      font-size: 20px;
+      }
+      #rectangle-six {
+      height: 50px;
+      width: 80px;
+      background-color: yellow;
+      position: absolute;
+      left: 460px;
+      top: 460px;
+      }
+      #view-recipe-one {
+      color: black;
+      text-decoration: none;
+      font-family: 'Edwardian Script ITC';
+      font-size: 25px;
+      position: absolute;
+      line-height: 20px;
+      left: 465px;
+      top: 465px;
+      }
+      #desert {
+      position: absolute;
+      left: 120px;
+      top: 330px;
+      }
+      #tdotd {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 30px;
+      position: absolute;
+      left: 140px;
+      top: 260px;
+      }
+      #tdotdd {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 25px;
+      position: absolute;
+      left: 460px;
+      top: 350px;
+      width: 400px;
+      }
+      #star-one {
+      color: yellow;
+      position: absolute;
+      left: 450px;
+      top: 260px;
+      }
+      #star-two {
+      color: yellow;
+      position: absolute;
+      left: 530px;
+      top: 260px;
+      }
+      #star-three {
+      color: yellow;
+      position: absolute;
+      left: 610px;
+      top: 260px;
+      }
+      #star-four {
+      color: yellow;
+      position: absolute;
+      left: 690px;
+      top: 260px;
+      }
+      #star-five {
+      color: yellow;
+      position: absolute;
+      left: 770px;
+      top: 260px;
+      }
+      #rectangle-seven {
+      height: 50px;
+      width: 80px;
+      background-color: yellow;
+      position: absolute;
+      left: 460px;
+      top: 760px;
+      }
+      #view-recipe-two {
+      color: black;
+      text-decoration: none;
+      font-family: 'Edwardian Script ITC';
+      font-size: 25px;
+      position: absolute;
+      line-height: 20px;
+      left: 465px;
+      top: 765px;
+      }
+      #ice-cream {
+      position: absolute;
+      left: 120px;
+      top: 630px;
+      }
+      #tics {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 30px;
+      position: absolute;
+      left: 140px;
+      top: 560px;
+      }
+      #ticsd {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 25px;
+      position: absolute;
+      left: 460px;
+      top: 650px;
+      width: 620px;
+      }
+	    #star-six {
+      color: yellow;
+      position: absolute;
+      left: 450px;
+      top: 560px;
+      }
+      #star-seven {
+      color: yellow;
+      position: absolute;
+      left: 530px;
+      top: 560px;
+      }
+      #star-eight {
+      color: yellow;
+      position: absolute;
+      left: 610px;
+      top: 560px;
+      }
+      #star-nine {
+      color: yellow;
+      position: absolute;
+      left: 690px;
+      top: 560px;
+      }
+      #star-ten {
+      color: yellow;
+      position: absolute;
+      left: 770px;
+      top: 560px;
+      }
+      #rectangle-eight {
+      height: 50px;
+      width: 80px;
+      background-color: yellow;
+      position: absolute;
+      left: 460px;
+      top: 1060px;
+      }
+      #view-recipe-three {
+      color: black;
+      text-decoration: none;
+      font-family: 'Edwardian Script ITC';
+      font-size: 25px;
+      position: absolute;
+      line-height: 20px;
+      left: 465px;
+      top: 1065px;
+      }
+      #big-cookie {
+      position: absolute;
+      left: 120px;
+      top: 930px;
+      }
+      #tcbtcm {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 30px;
+      position: absolute;
+      left: 140px;
+      top: 860px;
+      }
+      #tcbtcmd {
+      background-color: black;
+      color: yellow;
+      font-family: 'Calibri';
+      font-size: 25px;
+      position: absolute;
+      left: 460px;
+      top: 950px;
+      width: 400px;
+      }
+      #star-eleven {
+      color: yellow;
+      position: absolute;
+      left: 605px;
+      top: 860px;
+      }
+      #star-twelve {
+      color: yellow;
+      position: absolute;
+      left: 685px;
+      top: 860px;
+      }
+      #star-thirteen {
+      color: yellow;
+      position: absolute;
+      left: 765px;
+      top: 860px;
+      }
+      #star-fourteen {
+      color: yellow;
+      position: absolute;
+      left: 845px;
+      top: 860px;
+      }
+      #star-fifteen {
+      color: yellow;
+      position: absolute;
+      left: 925px;
+      top: 860px;
+      }
+    </style>
+</head>
+<body>
+  <div class="col-xs-12">
+  <div class="container-fluid">
+	  <div class="col-xs-12">
+    <div class="container-fluid">
+    <span id="search"><a href="#" class="glyphicon glyphicon-search"></a></span>
+    </div>
+    <div>
+        <a href="#">
+        <img id="buy" src="https://webstockreview.net/images/dollar-clipart-dollor-14.png"></a>
+      </div>
+    <div class="col-xs-12 menu">
+    <a href="view recipe.html" id="rectangle-six"><a href="view recipe.html" id="view-recipe-one">View<br> Recipe</a>
+    <div>
+      <span id="desert">
+      <img src="https://th.bing.com/th/id/Ra8914a00e1fbd5028aea65c3df7c21a6?rik=bm9iY3yGhBS8sg&pid=ImgRaw" width="300" height="250"></span>
+      <h2 id="tdotd">The dessert of the desert</h2>
+      <h2 id="tdotdd">Blondies with spicy chocolate chunks and on top of a camel's back which is hump cake.</h2>
+      </div>
+      <div><span id="star-one" style='font-size:80px;'>&#9733</span>
+      <span id="star-two" style='font-size:80px;'>&#9733</span>
+      <span id="star-three" style='font-size:80px;'>&#9733</span>
+      <span id="star-four" style='font-size:80px;'>&#9733</span>
+      <span id="star-five" style='font-size:80px;'>&#9733</span>
+      </div>
+      <a href="view recipe.html" id="rectangle-seven"><a href="view recipe.html" id="view-recipe-two">View<br> Recipe</a>
+      <span id="ice-cream">
+      <img src="https://th.bing.com/th/id/R607dcea20de9c2ce0d39403671ddd04a?rik=lJrsaF6csVuDSg&riu=http%3a%2f%2fwww.mmcoakridge.com%2fwp-content%2fuploads%2fsites%2f14%2f2016%2f05%2fIce-Cream-Sundae-WEB.jpg&ehk=Yy7Je3xEkyi479PNiJwM9QRa%2bKGi2YyKFxVfCtM%2f4bY%3d&risl=&pid=ImgRaw" width="300" height="250"></span>
+      <h2 id="tics">Ice Cream Saturdae</h2>
+      <h2 id="ticsd">A saturdae (not sundae) with chocolate, vanilla, and strawberry ice cream with thick hot fudge and chocolate chip cookie dough bites.  No need to go to school the next dae.</h2>
+      <div><span id="star-six" style='font-size:80px;'>&#9733</span>
+      <span id="star-seven" style='font-size:80px;'>&#9733</span>
+      <span id="star-eight" style='font-size:80px;'>&#9733</span>
+      <span id="star-nine" style='font-size:80px;'>&#9733</span>
+      <span id="star-ten" style='font-size:80px;'>&#9733</span>
+      </div>
+      <a href="view recipe.html" id="rectangle-eight"><a href="view recipe.html" id="view-recipe-three">View<br> Recipe</a>
+      <span id="big-cookie">
+      <img src="https://confessionsofanover-workedmom.com/wp-content/uploads/2012/01/0026.jpg" width="300" height="250"></span>
+      <h2 id="tcbtcm">The cookie bigger than cookie monster</h2>
+      <h2 id="tcbtcmd">A gooey cookie cake with chocolate chuncks with cookie dough ice cream on top.</h2>
+	  <div><span id="star-eleven" style='font-size:80px;'>&#9733</span>
+      <span id="star-twelve" style='font-size:80px;'>&#9733</span>
+      <span id="star-thirteen" style='font-size:80px;'>&#9733</span>
+      <span id="star-fourteen" style='font-size:80px;'>&#9733</span>
+      <span id="star-fifteen" style='font-size:80px;'>&#9733</span>
+      </div>
+      </div>
+      <div class="col-xs-12">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+    	    <ul class="nav navbar-nav">
+              <li><a href="index.html" id="itn">Home</a></li>
+    	        <li class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown" id="itn">
+                        Recipes <span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu">
+                  <li><a href="1 recipes.html" >Breakfast</a></li>
+                  <li><a href="2 recipes.html">Lunch/ dinner</a></li>
+                  <li><a href="3 recipes.html">Savory snacks</a></li>
+                  <li><a href="4 recipes.html">Desserts/ sweets</a></li>
+                </ul>
+                  <li><a href="about us.html" id="itn">About us</a></li>
+                  <li><a href="products.html" id="itn">Products</a></li>
+                  <li><a href="rules.html" id="itn">Rules</a></li>
+            </ul>
+    	    </div>
+          </div>
+          <div>
+    <span id="create-account"><a href="#" class="glyphicon glyphicon-user"></a></span>
+        </div>
+        </div>
+        <script src="script.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
+</body>
+</html>

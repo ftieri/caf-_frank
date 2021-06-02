@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+		<title>Café Frank</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+      body {
+      background-image: url('gray.png');
+      height: 1000px;
+      }
+      h1 {
+      color: yellow;
+      font-family: 'Edwardian Script ITC';
+      font-size: 100px;
+      position: absolute;
+      left: 160px;
+      top: 20px;
+      }
+      #create-account {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      letter-spacing: -1px;
+      left: 900px;
+      top: 25px;
+      height: 25px;
+      }
+      #buy {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 900px;
+      top: 60px;
+      height: 25px;
+      }
+      #search {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 900px;
+      top: 95px;
+      height: 25px;
+      }
+      .navbar {
+      background-color: yellow;
+      border-color: yellow;
+      left: -20px;
+      top: 190px;
+      width: 500px;
+      }
+      .dropdown-menu {
+      background-color: yellow;
+      }
+      #itn {
+      color: black;
+      font-family: 'Edwardian Script ITC';
+      font-size: 20px;
+      }
+      #description {
+      background-color: black;
+      color: yellow;
+      position: absolute;
+      line-height: 60px;
+      left: 30px;
+      top: 300px;
+      width: 1200px;
+      }
+      #quote {
+      background-color: black;
+      color: yellow;
+      position: absolute;
+      left: 30px;
+      top: 630px;
+      width: 460px;
+      }
+      #rfrgb {
+      color: yellow;
+      position: absolute;
+      font-size: 40px;
+      left: 150px;
+      top: 680px;
+      width: 680px;
+      }
+      .rgb {
+      position: absolute;
+      left: 300px;
+      top: 1000px;
+      width: 500px;
+      height: 200px;
+      }
+      .rgb #red {
+      background: linear-gradient(90deg, #000, red);
+      }
+      .rgb #green {
+      background: linear-gradient(90deg, #000, green);
+      }
+      .rgb #blue {
+      background: linear-gradient(90deg, #000, blue);
+      }
+      #nadc {
+      color: yellow;
+      }
+      #result{
+      font-size: 15px;
+      }
+      #sc {
+      background-color: black;
+      color: yellow;
+      width: 25%;
+      border: none;
+      outline: none;
+      pointer-events: none;
+      }
+      #set {
+      background-color: black;
+      position: absolute;
+      width: 45%;
+      height: 75%;
+      right: 500px;
+      top: 70px;
+      }
+      input[type="range"]{
+      -webkit-appearence: none;
+      display: block;
+      width: 100%;
+      height: 30%;
+      outline: none;
+      }
+      input[type="range"]::-webkit-slider-thumb{
+      -webkit-appearence: none;
+      background: #000;
+      cursor: pointer;
+      }
+      </style>
+  </head>
+  <body>
+    <div class="col-xs-12">
+      <div class="container-fluid">
+    <div>
+        <a href="#">
+        <img id="buy" src="https://webstockreview.net/images/dollar-clipart-dollor-14.png"></a>
+      </div>
+      <div>
+    <span id="search"><a href="#" class="glyphicon glyphicon-search"></a></span>
+    </div>
+  	<div class="col-xs-12">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+    	    <ul class="nav navbar-nav">
+              <li><a href="index.html" id="itn">Home</a></li>
+    	        <li class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown" id="itn">
+                        Recipes<span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu">
+                  <li><a href="1 recipes.html" >Breakfast</a></li>
+                  <li><a href="2 recipes.html">Lunch/ dinner</a></li>
+                  <li><a href="3 recipes.html">Savory snacks</a></li>
+                  <li><a href="4 recipes.html">Desserts/ sweets</a></li>
+                </ul>
+                  <li><a href="about us.html" id="itn">About us</a></li>
+                  <li><a href="products.html" id="itn">Products</a></li>
+                  <li><a href="rules.html" id="itn">Rules</a></li>
+            </ul>
+    	    </div>
+          </div>
+      <div class="col-xs-12">
+      <div class="container-fluid">
+    <h2 id="description">As long as you're ordering at my restaurant, there's ABSOLUTELY no ordering.  You need to buy the food from your local supermarket AND make the dish yourself!  If you ask me to make you food, I'm going to block you on all of your social media apps with my social media apps.  Another rule is to GROW UP!  I'm not your mother and I'm not making you food.  YOU make the food lol!</h2>
+    <h2 id="quote">"You know the rules and so do I"</h2>
+      <h2 id="rfrgb">You MUST choose a favorite color 😡</h2>
+      </div>
+      </div>
+    <div class="col-xs-6 rgb">
+      <div id = "result"><span id="nadc">Result</span>&nbsp;&nbsp;<input type="text" id="sc" value="rgb(0,0,0)"></div>
+    <span id="nadc">Red</span><input type="range" min="0" max="255" id="red" value="0">
+    <span id="nadc">Green</span><input type="range" min="0" max="255" id="green" value="0">
+    <span id="nadc">Blue</span><input type="range" min="0" max="255" id="blue" value="0">
+      <div id="set"></div>
+    </div>
+    <div>
+    <span id="create-account"><a href="#" class="glyphicon glyphicon-user"></a></span>
+    </div>
+  </div> 
+  </div>
+      <script src="script.js"></script>
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
+  <script type="text/javascript">
+    function myColor(){
+          var red = document.getElementById("red").value;
+          var green = document.getElementById("green").value;
+          var blue = document.getElementById("blue").value;
+          var color = 'rgb('+ red +','+ green +','+ blue +')'
+          var sc = document.getElementById("sc");
+          document.body.style.backgroundColor = color;
+          document.getElementById('sc').value = color;
+    }                  
+    document.getElementById('red').addEventListener('input',myColor);
+    document.getElementById('green').addEventListener('input',myColor);
+    document.getElementById('blue').addEventListener('input',myColor);
+    
+    var input = document.querySelectorAll("input");
+
+    for (var i = 0; i < input.length; i++) {
+      input[i].addEventListener("input", function() {
+          var red = document.getElementById("red").value,
+            green = document.getElementById("green").value,
+            blue = document.getElementById("blue").value;
+    var set = document.getElementById("set");
+          set.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+      });
+      }
+      </script>
+  </body> 
+</html>

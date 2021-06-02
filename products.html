@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="1 script.js"></script>
+        <script src="2 script.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<title>Café Frank</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+      body {
+      background-color: rgb(32, 32, 32);
+      height: 1300px;
+      }
+      h1 {
+      color: yellow;
+      font-family: 'Edwardian Script ITC';
+      font-size: 100px;
+      position: absolute;
+      left: 160px;
+      top: 65px;
+      }
+      #create-account {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      letter-spacing: -1px;
+      left: 900px;
+      top: 25px;
+      height: 25px;
+      }
+      #buy {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 900px;
+      top: 60px;
+      height: 25px;
+      }
+      #search {
+      background-color: yellow;
+      position: absolute;
+      font-family: 'Calibri';
+      font-size: 20px;
+      left: 900px;
+      top: 95px;
+      height: 25px;
+      }
+      .navbar {
+      background-color: yellow;
+      border-color: yellow;
+      top: 190px;
+      left: -5px;
+      width: 500px;
+      }
+      #description {
+      background-color: black;
+      color: yellow;
+      position: absolute;
+      line-height: 60px;
+      font-size: 30px;
+      left: 180px;
+      top: 450px;
+      width: 1000px;
+      }
+      .dropdown-menu {
+      background-color: yellow;
+      }
+      #itn {
+      color: black;
+      font-family: 'Edwardian Script ITC';
+      font-size: 20px;
+      }
+      #pics {
+      position: absolute;
+      top: 600px;
+      left: 10px;
+      }
+      .row {
+      line-height: 100px;
+      }
+      #product {
+      background-color: yellow;
+      border-color: yellow;
+      color: black;
+      }
+      .photo {
+      height: 250px;
+      width: 300px;
+      background-color: yellow;
+      border: 20px solid rgb(255, 255, 0);
+      display: inline-block;
+      border-radius: 4px;
+      color: black;
+      }
+      </style>
+  </head>
+  <body>
+  	<div class="col-xs-12">
+    <div class="container-fluid">
+    <span id="description">These products are NOT real food!  They're made out of plastic, just like the food toys you played with when all of you were little kids!</span>
+    <span id="search"><a href="#" class="glyphicon glyphicon-search"></a></span>
+    </div>
+    <div>
+        <a href="#">
+        <img id="buy" src="https://webstockreview.net/images/dollar-clipart-dollor-14.png"></a>
+      </div>
+    <div id="pics">
+    <div class="row">
+      <div class="row-one">
+      <div class="col-sm-3">
+        <a href="https://www.highsandhellos.com/uploads/1/0/5/5/105525937/s670875424455323546_p17_i1_w1358.png">
+        <img class="photo" src="https://www.highsandhellos.com/uploads/1/0/5/5/105525937/s670875424455323546_p17_i1_w1358.png"><br><span id="product">The condiment kit&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>
+      <div class="col-sm-3">
+        <a href="https://www.wallpapersin4k.org/wp-content/uploads/2017/04/Candy-Bar-Wallpaper-16.jpg">
+        <img class="photo" src="https://www.wallpapersin4k.org/wp-content/uploads/2017/04/Candy-Bar-Wallpaper-16.jpg"><br><span id="product">Our world famous chocolate&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>
+      <div class="col-sm-3">
+        <a href="https://cdn.thewhoot.com/wp-content/uploads/2020/02/make-thin-crispy-potato-chips.jpg">
+        <img class="photo" src="https://cdn.thewhoot.com/wp-content/uploads/2020/02/make-thin-crispy-potato-chips.jpg"><br><span id="product">Crispy potato chips&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>
+      <div class="col-sm-3">
+        <a href="https://th.bing.com/th/id/Ra5f5961b8ed4214b12304c7a3afc4a66?rik=5fsJNvBVW4aE6w&pid=ImgRaw">
+        <img class="photo" src="https://th.bing.com/th/id/Ra5f5961b8ed4214b12304c7a3afc4a66?rik=5fsJNvBVW4aE6w&pid=ImgRaw"><br><span id="product">Insects&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>                 
+    </div>
+    </div><br><br><br>
+    <div class="row">
+      <div class="row-two">
+      <div class="col-sm-3">
+        <a href="https://th.bing.com/th/id/R26b681f369e1683fab8b6701042a5bf6?rik=a8ez7qft6r6RZg&riu=http%3a%2f%2fcdn.albaneseconfectionery.com%2fcandy-store%2fimages%2fproducts%2fpopup%2fassorted-fruit-gummi-bears_3.jpg&ehk=0OlEREpXHBBx4x8Ru1zyqrepGrKvuAVAhGREmmxC3i8%3d&risl=&pid=ImgRaw">
+        <img class="photo" src="https://th.bing.com/th/id/R26b681f369e1683fab8b6701042a5bf6?rik=a8ez7qft6r6RZg&riu=http%3a%2f%2fcdn.albaneseconfectionery.com%2fcandy-store%2fimages%2fproducts%2fpopup%2fassorted-fruit-gummi-bears_3.jpg&ehk=0OlEREpXHBBx4x8Ru1zyqrepGrKvuAVAhGREmmxC3i8%3d&risl=&pid=ImgRaw"><br><span id="product">Sweet and soft gummy bears&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>
+      <div class="col-sm-3">
+        <a href="https://th.bing.com/th/id/Rf59dcf85219a16c3bcb118fd301a83e1?rik=l%2bSXSmwN%2fl0lpw&pid=ImgRaw">
+        <img class="photo" src="https://th.bing.com/th/id/Rf59dcf85219a16c3bcb118fd301a83e1?rik=l%2bSXSmwN%2fl0lpw&pid=ImgRaw"><br><span id="product">Slimy cheese&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>
+      <div class="col-sm-3">
+        <a href="https://th.bing.com/th/id/OIP.JIaas5DHSpytzb3O4p41EgHaE9?pid=ImgDet&rs=1">
+        <img class="photo" src="https://th.bing.com/th/id/OIP.JIaas5DHSpytzb3O4p41EgHaE9?pid=ImgDet&rs=1"><br><span id="product">Raw porterhouse steak&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>
+      <div class="col-sm-3">
+        <a href="https://th.bing.com/th/id/OIP.8X-O1c0oMxOxcpnFCPeITQHaLL?pid=ImgDet&rs=1">
+        <img class="photo" src="https://th.bing.com/th/id/OIP.8X-O1c0oMxOxcpnFCPeITQHaLL?pid=ImgDet&rs=1"><br><span id="product">Chewos&nbsp;&nbsp;&nbsp;$19.99</span></a>
+      </div>                 
+    </div>
+  </div>
+  </div>
+      <div class="col-xs-12">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+    	    <ul class="nav navbar-nav">
+              <li><a href="index.html" id="itn">Home</a></li>
+    	        <li class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown" id="itn">
+                        Recipes <span class="caret"></span>
+                    </a>
+                <ul class="dropdown-menu">
+                  <li><a href="1 recipes.html" >Breakfast</a></li>
+                  <li><a href="2 recipes.html">Lunch/ dinner</a></li>
+                  <li><a href="3 recipes.html">Savory snacks</a></li>
+                  <li><a href="4 recipes.html">Desserts/ sweets</a></li>
+                </ul>
+                  <li><a href="about us.html" id="itn">About us</a></li>
+                  <li><a href="products.html" id="itn">Products</a></li>
+                  <li><a href="rules.html" id="itn">Rules</a></li>
+            </ul>
+        </div>
+      </div>
+      <div>
+    <span id="create-account"><a href="#" class="glyphicon glyphicon-user"></a></span>
+    </div>
+      </div>
+    </div>
+    </div>
+      <script src="script.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
+  </body>
+</html>
