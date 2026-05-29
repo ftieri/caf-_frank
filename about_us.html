@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Frank</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Your stylesheet (optional, if you want to move custom CSS out) -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <style>
+    :root {
+      --brand-yellow: #ffd800;
+      --bg-dark: #202020;
+      --text-on-dark: #f1f1f1;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-on-dark);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Brand header text */
+    .brand-script {
+      font-family: 'Great Vibes', cursive;
+      color: var(--brand-yellow);
+    }
+
+    /* Navbar */
+    .navbar-custom {
+      background-color: var(--brand-yellow);
+    }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link,
+    .navbar-custom .dropdown-item {
+      color: #000 !important;
+      font-weight: 600;
+    }
+    .navbar-custom .dropdown-menu {
+      background-color: var(--brand-yellow);
+      border: none;
+    }
+
+    /* Hero/Description section */
+    .lead-card {
+      background-color: #000;        /* deep black background for contrast */
+      color: var(--brand-yellow);
+      border: 1px solid #333;
+      border-radius: .5rem;
+    }
+
+    /* Utility */
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      color: #000;
+      background: #ffe766;
+      text-decoration: none;
+    }
+    .icon-btn:hover { background: #ffef8f; color: #000; }
+
+    a.link-dark-underline {
+      color: #000;
+      text-decoration: none;
+    }
+    a.link-dark-underline:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom shadow-sm" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand brand-script fs-3" href="index.html">Café Frank</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+              <li><a class="dropdown-item" href="1 recipes.html">Breakfast</a></li>
+              <li><a class="dropdown-item" href="2 recipes.html">Lunch / Dinner</a></li>
+              <li><a class="dropdown-item" href="3 recipes.html">Savory Snacks</a></li>
+              <li><a class="dropdown-item" href="4 recipes.html">Desserts / Sweets</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
+        </ul>
+
+        <!-- Right utilities (replacing absolute-positioned icons) -->
+        <div class="d-flex align-items-center gap-3">
+          <a class="icon-btn" href="#" aria-label="Search"><i class="bi bi-search"></i></a>
+          <a class="icon-btn" href="#" aria-label="Create account"><i class="bi bi-person"></i></a>
+          <a class="btn btn-dark btn-sm d-flex align-items-center" href="#" aria-label="Buy products">
+            <i class="bi bi-currency-dollar me-1"></i> Buy
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero / Description -->
+    <section class="py-5">
+      <div class="container">
+        <header class="mb-4">
+          <h1 class="brand-script display-5 mb-1">Welcome to Café Frank</h1>
+          <p class="text-warning mb-0">Simple recipes. Simple ingredients. Lots of creativity.</p>
+        </header>
+
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <div class="lead-card p-4 p-md-5">
+              <p class="fs-4 mb-3">
+                We’re a restaurant—but <strong>you</strong> make the food, not us. We offer simple recipes with simple
+                ingredients. Choose from over 100 different recipes and get inspired!
+              </p>
+              <p class="mb-3">
+                Yes, we do have products you can “buy” from us, but they’re <em>fake food</em> because we can’t make
+                food for you. You’re getting older now—it’s time to learn how to cook!
+              </p>
+              <p class="mb-0">
+                Btw, we NEVER use the number <strong>20</strong> nor ANY number that ends with 20, because
+                <strong>20</strong> is an unlucky number! 😉
+              </p>
+            </div>
+
+            <!-- Optional quick actions under the description -->
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a class="btn btn-warning text-dark" href="1 recipes.html">Browse Breakfast</a>
+              <a class="btn btn-outline-warning" href="2 recipes.html">Lunch / Dinner</a>
+              <a class="btn btn-outline-warning" href="3 recipes.html">Savory Snacks</a>
+              <a class="btn btn-outline-warning" href="4 recipes.html">Desserts / Sweets</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 border-top border-secondary">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <p class="mb-2 mb-md-0 small text-secondary">© <span id="year"></span> Café Frank. All rights reserved.</p>
+      <nav class="d-flex gap-3" aria-label="Footer">
+        <a class="link-dark-underline" href="#">Privacy</a>
+        <a class="link-dark-underline" href="#">Terms</a>
+        <a class="link-dark-underline" href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle (no jQuery required) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+    defer
+  ></script>
+
+  <!-- Your script(s) -->
+  <script defer>
+    // Footer year
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('year');
+      if (el) el.textContent = new Date().getFullYear();
+    });
+  </script>
+
+  <!-- If you still need p5.js, keep them. Otherwise, remove to save bytes. -->
+  <!--
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js" defer></script>
+  -->
+</body>
+</html>

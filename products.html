@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Frank — Products</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --brand-yellow: #ffd800;
+      --bg-dark: #202020;
+      --text: #f1f1f1;
+      --muted: #b9b9b9;
+      --card-bg: #111;
+      --card-border: #333;
+      --focus: #81b3ff;
+      --container: 1100px;
+      --radius: 12px;
+      --shadow-sm: 0 1px 6px rgba(0,0,0,.18);
+      --shadow-md: 0 8px 24px rgba(0,0,0,.3);
+      --gap: 1rem;
+    }
+
+    /* Base */
+    *, *::before, *::after { 
+        box-sizing: border-box; 
+      }
+    html, body { 
+        margin: 0; 
+        padding: 0; 
+      }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    img { 
+        max-width: 100%; 
+        display: block; 
+      }
+    a { 
+        color: inherit; 
+        text-decoration: none; 
+      }
+    a:focus, button:focus, [role="button"]:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
+    .container { width: min(100% - 2rem, var(--container)); margin-inline: auto; }
+
+    /* Utilities */
+    .py-5 { 
+        padding-block: 3rem; 
+      }
+    .pb-5 { 
+        padding-bottom: 3rem; 
+      }
+    .mb-0 { 
+        margin-bottom: 0; 
+        background: none;
+      }
+    .mb-1 { 
+        margin-bottom: .25rem; 
+      }
+    .mb-2 { 
+        margin-bottom: .5rem; 
+      }
+    .mb-3 { 
+        margin-bottom: 1rem; 
+      }
+    .mb-4 { 
+        margin-bottom: 1.5rem; 
+        background: none;
+        color: #ffd800
+      }
+    .mb-5 { 
+        margin-bottom: 2rem; 
+      }
+    .mt-4 { 
+        margin-top: 1.5rem; 
+      }
+
+    .brand-script { 
+        font-family: 'Great Vibes', cursive; 
+        color: var(--brand-yellow); }
+    .display-5 { 
+        font-size: clamp(1.8rem, 4vw, 2.5rem); 
+        margin: 0; 
+      }
+
+    /* --------------------------------
+       Header / Navbar (no Bootstrap)
+    ---------------------------------*/
+    header {
+      background: var(--brand-yellow);
+      color: #000;
+      position: sticky; 
+      top: 0; 
+      z-index: 10;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav {
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+      gap: var(--gap); 
+      min-height: 72px;
+    }
+    .nav__brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--bg-dark);
+    }
+
+    /* Menu */
+    .nav__menu { position: relative; }
+    .nav__list {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: .25rem;
+      max-height: 0; overflow: hidden; transition: max-height .3s ease;
+      background: var(--brand-yellow);
+      border-radius: 0 0 12px 12px;
+    }
+    .nav__list[data-open="true"] { max-height: 60vh; padding: .5rem; }
+    .nav__link {
+      display: block; color: #000; font-weight: 600;
+      padding: .7rem .55rem; border-radius: 8px;
+    }
+    .nav__link:hover { background: rgba(0,0,0,.06); }
+    .nav__link.active {
+      text-decoration: underline; text-underline-offset: 4px;
+    }
+
+    /* Dropdown */
+    .dropdown { 
+        position: relative; 
+      }
+    .dropdown__toggle { 
+        display: inline-flex; 
+        align-items: center; 
+        gap: .4rem; 
+      }
+    .dropdown__menu {
+      position: absolute; left: 0; top: calc(100% + 6px);
+      background: var(--brand-yellow); color: #000;
+      border-radius: 12px; box-shadow: var(--shadow-md);
+      padding: .35rem; display: none; min-width: 200px; z-index: 20;
+    }
+    .dropdown__menu a { 
+        display: block; 
+        padding: .55rem .65rem; 
+        border-radius: 8px; 
+        font-weight: 600; 
+      }
+    .dropdown__menu a:hover { 
+        background: rgba(0,0,0,.06); 
+      }
+
+    /* Mobile toggle + actions */
+    .nav__toggle {
+      background: transparent; border: 0; padding: .5rem; border-radius: 8px; cursor: pointer;
+      display: inline-grid; place-items: center;
+    }
+    .nav__actions { display: flex; align-items: center; gap: .75rem; }
+    .icon-btn {
+      display: inline-grid; place-items: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      color: #000; background: #ffe766;
+      transition: filter .2s ease;
+    }
+    .icon-btn:hover { 
+        filter: brightness(1.05); 
+      }
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: .5rem; border: 0;
+      background: #000; color: #fff; border-radius: 999px;
+      padding: .55rem .9rem; font-weight: 700; cursor: pointer;
+      transition: filter .2s ease;
+    }
+    .btn-dark:hover { 
+        filter: brightness(1.1); 
+      }
+
+    /* Desktop nav */
+    @media (min-width: 768px) {
+      .nav__toggle { display: none; }
+      .nav__list {
+        display: flex; align-items: center; gap: .5rem;
+        max-height: none; background: transparent; padding: 0; border-radius: 0;
+      }
+      .nav__link { padding: .6rem .75rem; }
+      .dropdown:hover .dropdown__menu,
+      .dropdown:focus-within .dropdown__menu { display: block; }
+    }
+
+    /* --------------------------------
+       Lead / Description
+    ---------------------------------*/
+    .lead-card {
+      background-color: #000;
+      color: var(--brand-yellow);
+      border: 1px solid #333;
+      border-radius: .5rem;
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* --------------------------------
+       Products Grid (no Bootstrap)
+    ---------------------------------*/
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 576px) { 
+        .grid { 
+            grid-template-columns: repeat(2, 1fr); 
+        } 
+      }
+    @media (min-width: 768px) { 
+        .grid { 
+            grid-template-columns: repeat(3, 1fr); 
+        } 
+      }
+    @media (min-width: 1024px) { 
+        .grid { 
+            grid-template-columns: repeat(4, 1fr); 
+        } 
+      }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      height: 100%;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s ease;
+    }
+    .card:hover { transform: translateY(-2px); }
+
+    .product-img-wrap {
+      aspect-ratio: 4 / 3;
+      overflow: hidden; background: #222;
+    }
+    .product-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .card-body {
+      padding: 1rem 1rem 1.25rem;
+      display: grid; align-content: start; gap: .5rem;
+    }
+    .card-title { color: #fff; margin: 0; font-size: 1.05rem; }
+    .price-badge {
+      display: inline-block; background: var(--brand-yellow); color: #000;
+      border-radius: 999px; font-weight: 700; padding: .25rem .6rem;
+    }
+
+    /* Alert (no Bootstrap) */
+    .alert {
+      background: #171717; color: #e7e7e7;
+      border: 1px solid #2a2a2a; border-radius: 10px;
+      padding: 1rem;
+    }
+
+    /* Footer */
+    footer { border-top: 1px solid #444; }
+    .footer__inner {
+      display: grid; gap: .75rem; align-items: center;
+      padding-block: 1.25rem;
+    }
+    @media (min-width: 768px) { 
+        .footer__inner { 
+            grid-template-columns: 1fr auto; 
+        } 
+      }
+    .muted { 
+        color: var(--muted); 
+        font-size: .95rem; 
+        margin: 0; 
+      }
+    .footer__links { 
+        display: flex; 
+        gap: 1rem; 
+        flex-wrap: wrap; 
+      }
+    .footer__links a { 
+        color: #cfcfcf; 
+      }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header aria-label="Primary navigation">
+    <div class="container nav">
+      <a class="nav__brand brand-script" href="index.html">Café Frank</a>
+
+      <!-- Mobile toggle -->
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Menu -->
+      <nav class="nav__menu" id="mainNav">
+        <ul class="nav__list" id="navList" data-open="false">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="nav__link dropdown__toggle" id="menuDropdown" aria-expanded="false" aria-haspopup="true">
+              Menu
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M6 9l6 6 6-6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="dropdown__menu" id="menuDropdownMenu" role="menu" aria-labelledby="menuDropdown">
+              <a class="nav__link" href="1 recipes.html" role="menuitem">Breakfast</a>
+              <a class="nav__link" href="2 recipes.html" role="menuitem">Lunch / Dinner</a>
+              <a class="nav__link" href="3 recipes.html" role="menuitem">Savory Snacks</a>
+              <a class="nav__link" href="4 recipes.html" role="menuitem">Desserts / Sweets</a>
+            </div>
+          </li>
+
+          <li><a class="nav__link" href="about_us.html">About Us</a></li>
+          <li><a class="nav__link active" aria-current="page" href="products.html">Products</a></li>
+          <li><a class="nav__link" href="rules.html">Rules</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right-side utilities -->
+      <div class="nav__actions">
+        <a class="icon-btn" href="#" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="#000" stroke-width="2"/>
+            <path d="M20 20l-3.2-3.2" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="#" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" stroke="#000" stroke-width="2"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a class="btn-dark" href="#" aria-label="Buy">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3v18M5 10h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Buy
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Description / Hero -->
+    <section class="py-5">
+      <div class="container">
+        <header class="mb-4">
+          <h1 class="brand-script display-5 mb-1">Products</h1>
+          <p class="mb-0">Fun, quirky, and definitely not edible.</p>
+        </header>
+
+        <div class="lead-card">
+          <p class="mb-0" style="font-size: clamp(1rem, 1.3vw, 1.125rem);">
+            These products are <strong>NOT real food!</strong> They’re made out of plastic—just like the toy food
+            you played with when you were little kids!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="pb-5" aria-label="Products">
+      <div class="container">
+        <div class="grid">
+          <!-- Product 1 -->
+          <article class="card">
+            <a href="https://www.highsandhellos.com/uploads/1/0/5/5/105525937/s670875424455323546_p17_i1_w1358.png" target="_blank" rel="noopener" aria-label="Open The Condiment Kit image">
+              <div class="product-img-wrap">
+                <img src="https://www.highsandhellos.com/uploads/1/0/5/5/105525937/s670875424455323546_p17_i1_w1358.png"
+                     alt="Yellow plastic condiment kit with bottles and tray" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">The Condiment Kit</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="card">
+            <a href="https://www.wallpapersin4k.org/wp-content/uploads/2017/04/Candy-Bar-Wallpaper-16.jpg" target="_blank" rel="noopener" aria-label="Open Our World-Famous Chocolate image">
+              <div class="product-img-wrap">
+                <img src="https://elavegan.com/wp-content/uploads/2023/01/homemade-chocolate-bars-1017x1500.jpg"
+                     alt="Assorted candy bars in colorful wrappers" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">Our World-Famous Chocolate</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="card">
+            <a href="https://cdn.thewhoot.com/wp-content/uploads/2020/02/make-thin-crispy-potato-chips.jpg" target="_blank" rel="noopener" aria-label="Open Crispy Potato Chips image">
+              <div class="product-img-wrap">
+                <img src="https://diyjoy.com/wp-content/uploads/2023/05/homemade-crispy-potato-chips-recipe-1024x576.jpg"
+                     alt="Bowl of thin crispy potato chips" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">Crispy Potato Chips</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="card">
+            <a href="https://th.bing.com/th/id/Ra5f5961b8ed4214b12304c7a3afc4a66?rik=5fsJNvBVW4aE6w&pid=ImgRaw" target="_blank" rel="noopener" aria-label="Open Insects image">
+              <div class="product-img-wrap">
+                <img src="https://cff2.earth.com/uploads/2022/09/14070133/Tropical-insects-scaled.jpg"
+                     alt="Close-up of edible-looking insects as novelty item" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">Insects</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="card">
+            <a href="https://th.bing.com/th/id/R26b681f369e1683fab8b6701042a5bf6?rik=a8ez7qft6r6RZg&riu=http%3a%2f%2fcdn.albaneseconfectionery.com%2fcandy-store%2fimages%2fproducts%2fpopup%2fassorted-fruit-gummi-bears_3.jpg&ehk=0OlEREpXHBBx4x8Ru1zyqrepGrKvuAVAhGREmmxC3i8%3d&risl=&pid=ImgRaw" target="_blank" rel="noopener" aria-label="Open Sweet and Soft Gummy Bears image">
+              <div class="product-img-wrap">
+                <img src="https://crackseedstorehawaii.com/cdn/shop/products/Li_Hing_Gummy_Bear_2048x.jpg?v=1590048590"
+                     alt="Assorted colorful gummy bears" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">Sweet &amp; Soft Gummy Bears</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="card">
+            <a href="https://th.bing.com/th/id/Rf59dcf85219a16c3bcb118fd301a83e1?rik=l%2bSXSmwN%2fl0lpw&pid=ImgRaw" target="_blank" rel="noopener" aria-label="Open Slimy Cheese image">
+              <div class="product-img-wrap">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.xuzJZ6deJ98pW2_IOBfbAwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+                     alt="Wedge of soft cheese on a board" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">Slimy Cheese</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+
+          <!-- Product 7 -->
+          <article class="card">
+            <a href="https://th.bing.com/th/id/OIP.JIaas5DHSpytzb3O4p41EgHaE9?pid=ImgDet&rs=1" target="_blank" rel="noopener" aria-label="Open Raw Porterhouse Steak image">
+              <div class="product-img-wrap">
+                <img src="https://s3.amazonaws.com/grazecart/lilachedgefarm/images/1555644805_5cb9418600961.jpg"
+                     alt="Raw porterhouse steak on a cutting board" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">Raw Porterhouse Steak</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+
+          <!-- Product 8 -->
+          <article class="card">
+            <a href="https://th.bing.com/th/id/OIP.8X-O1c0oMxOxcpnFCPeITQHaLL?pid=ImgDet&rs=1" target="_blank" rel="noopener" aria-label="Open Chewos image">
+              <div class="product-img-wrap">
+                <img src="https://th.bing.com/th/id/OIP.8X-O1c0oMxOxcpnFCPeITQHaLL?pid=ImgDet&rs=1"
+                     alt="Packaged candy labeled Chewos" loading="lazy" />
+              </div>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title mb-1">Chewos</h5>
+              <span class="price-badge">$19.99</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Grid footer note -->
+        <div class="alert mt-4" role="note" aria-live="polite">
+          Reminder: These are novelty, display-only items (not edible). Handle with creativity!
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer__inner">
+      <p class="muted">© <span id="year"></span> Café Frank. All rights reserved.</p>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    navToggle?.addEventListener('click', () => {
+      const isOpen = navList.getAttribute('data-open') === 'true';
+      navList.setAttribute('data-open', String(!isOpen));
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Dropdown (click on mobile; hover handled via CSS on desktop)
+    const dropdownToggle = document.getElementById('menuDropdown');
+    const dropdownMenu = document.getElementById('menuDropdownMenu');
+
+    if (dropdownToggle && dropdownMenu) {
+      const closeDropdown = () => {
+        dropdownMenu.style.display = '';
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      };
+      const openDropdown = () => {
+        dropdownMenu.style.display = 'block';
+        dropdownToggle.setAttribute('aria-expanded', 'true');
+      };
+
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
+        if (isOpen) closeDropdown(); else openDropdown();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+          closeDropdown();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDropdown();
+      });
+    }
+  </script>
+</body>
+</html>
